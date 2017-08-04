@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  main:
+    image: nginx:alpine
+    volumes:
+      - "./public:/usr/share/nginx/html"
+    environment:
+      - VIRTUAL_HOST=static.docker.do8.cc
+      - VIRTUAL_PORT=80
+networks:
+  default:
+    external:
+      name: default-network
